@@ -1,4 +1,4 @@
-helper = Thomd::Helper.new('2.1.2', 'thomd')
+helper = Helper.new('thomd')
 
 # create a user
 user helper.user do
@@ -39,7 +39,7 @@ git(helper.home('dotfiles')) do
 end
 
 # install dotfiles
-execute 'install dotfiles' do
+execute 'install-dotfiles' do
   command "cd #{helper.home('dotfiles')} ; make"
 end
 
